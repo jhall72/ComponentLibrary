@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+/* Design tokens — exposed as CSS variables so consumers can theme the library. */
+@theme {
+  --color-brand-50: oklch(0.97 0.02 260);
+  --color-brand-100: oklch(0.93 0.04 260);
+  --color-brand-500: oklch(0.62 0.2 260);
+  --color-brand-600: oklch(0.55 0.21 260);
+  --color-brand-700: oklch(0.48 0.19 260);
+}
