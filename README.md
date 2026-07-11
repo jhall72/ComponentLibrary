@@ -27,6 +27,15 @@ export function App() {
 }
 ```
 
+## Components
+
+| Component    | Description                                                            |
+| ------------ | --------------------------------------------------------------------- |
+| `Button`     | Button with `primary` / `secondary` / `outline` / `ghost` variants.   |
+| `TextInput`  | Labeled text input with hint/error states, sizes, and adornments.     |
+| `Checkbox`   | Checkbox with label, hint/error, and an `indeterminate` state.        |
+| `DatePicker` | Dependency-free calendar date picker with keyboard nav and min/max.   |
+
 ### Button
 
 | Prop        | Type                                                  | Default     |
@@ -36,6 +45,35 @@ export function App() {
 | `fullWidth` | `boolean`                                             | `false`     |
 
 All native `<button>` attributes are also supported.
+
+### TextInput
+
+```tsx
+<TextInput label="Email" placeholder="you@example.com" hint="We'll never share it." />
+<TextInput label="Email" error="Enter a valid email address." />
+```
+
+Key props: `label`, `hint`, `error`, `size` (`sm`/`md`/`lg`), `fullWidth`, `leftAdornment`, `rightAdornment`, plus all native `<input>` attributes.
+
+### Checkbox
+
+```tsx
+<Checkbox label="Accept terms" />
+<Checkbox label="Select all" indeterminate />
+```
+
+Key props: `label`, `hint`, `error`, `indeterminate`, `size` (`sm`/`md`), plus all native checkbox attributes.
+
+### DatePicker
+
+```tsx
+const [date, setDate] = useState<Date | null>(null);
+<DatePicker label="Departure" value={date} onChange={setDate} min={new Date()} />
+```
+
+Key props: `value`/`defaultValue`, `onChange`, `label`, `hint`, `error`, `min`, `max`,
+`weekStartsOn` (`0`=Sunday), `locale`, `format`, `size`, `fullWidth`. Fully keyboard-navigable
+(arrow keys, Page Up/Down, Home/End, Enter/Escape) with no third-party date dependency.
 
 ## Development
 
